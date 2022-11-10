@@ -14,6 +14,8 @@ export const initialState = {
 	updateFilter: (filter: string) => {},
 	loading: true,
 	updateLoading: (status: boolean) => {},
+	isLocalData: false,
+	updateLocalStatus: (status: boolean) => {}
 };
 
 /* Main App Reducer */
@@ -59,6 +61,12 @@ export const AppReducer = (state: IReducerState, action: IReducerAction) => {
 			return {
 				...state,
 				selectedVideo: payload.selectedVideo,
+			};
+			break;
+		case "UPDATE_LOCAL_STATUS":
+			return {
+				...state,
+				isLocalData: payload.isLocalData,
 			};
 			break;
 		default:

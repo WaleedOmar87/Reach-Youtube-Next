@@ -1,8 +1,9 @@
-export { default as Header } from "@/components/Header";
-export { default as Logo } from "@/components/Logo";
-export { default as SearchBar } from "@/components/Searchbar";
-export { default as VideosList } from "@/components/VideosList";
+export { Header } from "@/components/Header";
+export { Logo } from "@/components/Logo";
+export { SearchBar } from "@/components/Searchbar";
+export { VideosList } from "@/components/VideosList";
 export { VideoItem } from "@/components/VideoItem";
 export { Loading } from "@/components/Loading";
 export { Error } from "@/components/Error";
 export { Filter } from "@/components/Filter";
+export { Hint } from "@/components/Hint";

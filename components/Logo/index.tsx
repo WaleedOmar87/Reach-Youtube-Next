@@ -2,7 +2,7 @@ import { AppProps } from "next/app";
 import React, { FC } from "react";
 
 /* Logo Component */
-const Logo:FC = (): JSX.Element => {
+export const Logo:FC = (): JSX.Element => {
 	return (
 		<div className="logo">
 			<svg
@@ -21,5 +21,3 @@ const Logo:FC = (): JSX.Element => {
 		</div>
 	);
 };
-
-export default Logo;

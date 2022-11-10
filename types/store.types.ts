@@ -5,6 +5,7 @@ export interface IReducerState {
 	selectedVideo: {} | null;
 	loading: boolean;
 	filter: string;
+	isLocalData: boolean;
 }
 
 export interface IReducerAction {

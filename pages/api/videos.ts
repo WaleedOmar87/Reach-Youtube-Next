@@ -20,8 +20,9 @@ export default function handler(
 		part: "snippet",
 	} as any);
 
-	if (filter && filter !== "") {
-		params.append("publishedAfter", filterDate(filter));
+	if (["lastDay", "lastWeek", "lastMonth"].includes(filter as string)) {
+		let filteredDate = filterDate(filter);
+		params.append("publishedAfter", filteredDate);
 	}
 
 	/* API Url */
@@ -36,9 +37,18 @@ export default function handler(
 	})
 		.then((res) => res.json())
 		.then((data) => {
-			if (data.hasOwnProperty("error")) {
-				const localData = fs.readFileSync("__mocks__/data.json");
-				res.status(200).send(localData as any);
+			// Check if fallback to local data is allowed
+			let fallback = process.env.ENABLE_FALLBACK;
+
+			if (fallback === "true") {
+				if (data.hasOwnProperty("error")) {
+					const localData = fs.readFileSync("__mocks__/data.json");
+					res.status(200).send(localData as any);
+				} else {
+					// Add localData parameter
+					data.local = false;
+					res.status(200).send(data);
+				}
 			} else {
 				res.status(200).send(data);
 			}

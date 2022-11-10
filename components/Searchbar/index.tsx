@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useContext } from "react";
 import { AppContext } from "@/store/app.context";
 
-const SearchBar: FC = (): JSX.Element => {
+export const SearchBar: FC = (): JSX.Element => {
 	const { searchTerm, updateSearchTerm } = useContext(AppContext);
 	const handleSubmit = (event: any) => {
 		/* Prevent Default Behavior */
@@ -33,4 +33,3 @@ const SearchBar: FC = (): JSX.Element => {
 		</div>
 	);
 };
-export default SearchBar;

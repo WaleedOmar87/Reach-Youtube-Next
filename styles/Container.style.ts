@@ -27,6 +27,17 @@ export const ContainerStyle = styled.section`
 				left: 0;
 				width: 100vw;
 			}
+			.hint-container {
+				display: flex;
+				background: green;
+				position: fixed;
+				color: #fff;
+				padding: 1em;
+				z-index: 999;
+				left: 0;
+				bottom: 0;
+				width: 100vw;
+			}
 		}
 	}
 `;

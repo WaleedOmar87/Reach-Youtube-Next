@@ -61,6 +61,16 @@ const AppProvider = ({ children }: any) => {
 		});
 	};
 
+	const updateLocalStatus = (status: boolean): void => {
+		dispatch({
+			type: "UPDATE_LOCAL_STATUS",
+			payload: {
+				...state,
+				isLocalData: status,
+			},
+		});
+	};
+
 	return (
 		<AppContext.Provider
 			value={
@@ -77,6 +87,8 @@ const AppProvider = ({ children }: any) => {
 					updateLoading: updateLoading,
 					filter: state.filter,
 					updateFilter: updateFilter,
+					isLocalData: state.isLocalData,
+					updateLocalStatus: updateLocalStatus
 				} as any
 			}
 		>

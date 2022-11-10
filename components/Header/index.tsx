@@ -3,7 +3,7 @@ import { Logo, SearchBar } from "@/components/index";
 import { HeaderStyle, ContainerStyle } from "@/styles/index";
 
 /* Header Main Component */
-const Header: FC = (): JSX.Element => {
+export const Header: FC = (): JSX.Element => {
 	return (
 		<HeaderStyle>
 			<ContainerStyle>
@@ -19,4 +19,3 @@ const Header: FC = (): JSX.Element => {
 		</HeaderStyle>
 	);
 };
-export default Header;
