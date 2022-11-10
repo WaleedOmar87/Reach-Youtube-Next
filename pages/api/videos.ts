@@ -1,6 +1,7 @@
 require("dotenv").config();
 import type { NextApiRequest, NextApiResponse } from "next";
 import { IResponseType } from "@/types/api.types";
+import { filterDate } from "@/utils/index";
 import fs from "fs";
 
 /* API Endpoint to handle api requests */
@@ -8,13 +9,20 @@ export default function handler(
 	req: NextApiRequest,
 	res: NextApiResponse<IResponseType>
 ) {
-	const { q } = req.query;
+	// Get query and date filter from request
+	const { q, filter } = req.query;
+
+	// Prepare search params
 	const params = new URLSearchParams({
 		q: q,
 		maxResults: 30,
 		key: process.env.YOUTUBE_API_KEY,
 		part: "snippet",
 	} as any);
+
+	if (filter && filter !== "") {
+		params.append("publishedAfter", filterDate(filter));
+	}
 
 	/* API Url */
 	const url = `https://www.googleapis.com/youtube/v3/search?${params}`;

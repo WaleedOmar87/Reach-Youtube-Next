@@ -5,11 +5,9 @@ export const VideosListStyle = styled.div`
 	flex-direction: row;
 	min-width: 100%;
 	flex-wrap: wrap;
-	margin-top: 2rem;
 	.single-video {
 		padding: 1em;
 		width: 33.3%;
-
 		.video-content {
 			max-width: 100%;
 			.video-thumbnail {

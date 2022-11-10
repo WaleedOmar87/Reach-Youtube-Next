@@ -9,13 +9,28 @@ import { VideosListStyle } from "@/styles/index";
 /* Header Main Component */
 const VideosList: FC = (): JSX.Element => {
 	const [error, setError] = useState<IError>({ code: 0, message: "" });
-	const { searchTerm, loading, updateLoading, videosList, updateVideosList } =
-		useContext(AppContext);
+	const {
+		searchTerm,
+		loading,
+		updateLoading,
+		videosList,
+		updateVideosList,
+		filter,
+	} = useContext(AppContext);
 
 	/* Update Videos List When Search Term Changes */
 	useEffect(() => {
+		// Display Loading Screen
 		updateLoading(true);
-		const api = `${config.api}/?q=${searchTerm}`;
+
+		// Prepare Local API
+		const params = new URLSearchParams({
+			q: searchTerm,
+			filter: filter,
+		});
+		const api = `${config.api}/?${params.toString()}}`;
+
+		// Fetch data from local api
 		fetch(api, {
 			method: "GET",
 		})

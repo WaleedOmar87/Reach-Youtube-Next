@@ -5,7 +5,7 @@ import { ContainerStyle } from "@/styles/Container.style";
 
 export const Filter: FC = (): JSX.Element => {
 	const { filter, updateFilter, videosList } = useContext(AppContext);
-	const checkboxes = [
+	const filterOptions = [
 		{ id: "lastDay", title: "Last 24 Hours" },
 		{ id: "lastWeek", title: "Last 7 Days" },
 		{ id: "lastMonth", title: "Last Month" },
@@ -18,31 +18,27 @@ export const Filter: FC = (): JSX.Element => {
 						<div className="videos-count">
 							About {videosList.length} Results
 						</div>
-						<div className="filter-menu">
+						<div className="filter-container">
 							<h4>Filter</h4>
-							<ul>
-								{checkboxes.map((box) => {
+							<select
+								id="filter-menu"
+								className="filter-menu"
+								onChange={(event) =>
+									updateFilter(event.target.value)
+								}
+							>
+								{filterOptions.map((option) => {
 									return (
-										<li key={box.id}>
-											<label htmlFor={box.id}>
-												<input
-													type="checkbox"
-													defaultChecked={
-														filter === box.id
-													}
-													onChange={(event) =>
-														updateFilter(
-															event.target.value
-														)
-													}
-													id={box.id}
-												/>
-												{box.title}
-											</label>
-										</li>
+										<option
+											value={option.id}
+											selected={option.id === filter}
+											id={option.id}
+										>
+											{option.title}
+										</option>
 									);
 								})}
-							</ul>
+							</select>
 						</div>
 					</FilterStyle>
 				</div>

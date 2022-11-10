@@ -8,7 +8,7 @@ export const FilterStyle = styled.div`
 	width: 100%;
 	margin: 1rem 0 0 0;
 	padding: 0 15px;
-	.filter-menu {
+	.filter-container {
 		justify-self: flex-end;
 		display: flex;
 		align-items: center;
@@ -16,21 +16,13 @@ export const FilterStyle = styled.div`
 		h4 {
 			padding: 0;
 		}
-		ul {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-			display: flex;
-			align-items: center;
-			flex-wrap: wrap;
-			gap: 1rem;
-			li {
-				list-style: none;
-				label {
-					display: flex;
-					gap: 0.2rem;
-				}
-			}
+		.filter-menu {
+			padding: 0.2em;
+			font-size: 1rem;
+			border: 1px solid #ccc;
+			background-color: transparent;
+			border-radius: 0.2rem;
 		}
+
 	}
 `;
