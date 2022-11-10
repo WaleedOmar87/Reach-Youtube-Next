@@ -1,9 +1,7 @@
 import React, { FC } from "react";
 import { IVideo } from "@/types/app.types";
 
-export const VideoItem: FC<IVideo> = (
-	props: IVideo
-): JSX.Element => {
+export const VideoItem: FC<IVideo> = (props: IVideo): JSX.Element => {
 	const { snippet, id } = props.video;
 	const { thumbnails, channelTitle, publishTime, title, description } =
 		snippet;
@@ -27,7 +25,11 @@ export const VideoItem: FC<IVideo> = (
 							<span className="channel-title">
 								{channelTitle}
 							</span>
-							<span className="publish-date">{publishTime}</span>
+							<span className="publish-date">
+								{publishTime !== ""
+									? new Date(publishTime).toUTCString()
+									: ""}
+							</span>
 						</div>
 					</aside>
 				</div>

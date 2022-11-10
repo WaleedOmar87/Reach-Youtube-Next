@@ -25,7 +25,6 @@ const VideosList: FC = (): JSX.Element => {
 			.then((content) => {
 				const { items, error } = content;
 				if (error) {
-					// TODO update videos list with static content
 					setError({ code: error.code, message: error.message });
 				} else {
 					updateLoading(false);

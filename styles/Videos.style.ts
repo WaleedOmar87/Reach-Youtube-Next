@@ -5,7 +5,7 @@ export const VideosListStyle = styled.div`
 	flex-direction: row;
 	min-width: 100%;
 	flex-wrap: wrap;
-	margin-top: 40px;
+	margin-top: 2rem;
 	.single-video {
 		padding: 1em;
 		width: 33.3%;

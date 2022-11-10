@@ -41,6 +41,16 @@ const AppProvider = ({ children }: any) => {
 			},
 		});
 	};
+
+	const updateFilter = (filter: string): void => {
+		dispatch({
+			type: "UPDATE_FILTER",
+			payload: {
+				...state,
+				filter: filter,
+			},
+		});
+	};
 	const updateLoading = (status: boolean): void => {
 		dispatch({
 			type: "UPDATE_LOADING",
@@ -65,6 +75,8 @@ const AppProvider = ({ children }: any) => {
 					updatedSelectedVideo: updatedSelectedVideo,
 					loading: state.loading,
 					updateLoading: updateLoading,
+					filter: state.filter,
+					updateFilter: updateFilter,
 				} as any
 			}
 		>

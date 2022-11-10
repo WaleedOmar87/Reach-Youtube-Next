@@ -5,3 +5,4 @@ export { default as VideosList } from "@/components/VideosList";
 export { VideoItem } from "@/components/VideoItem";
 export { Loading } from "@/components/Loading";
 export { Error } from "@/components/Error";
+export { Filter } from "@/components/Filter";

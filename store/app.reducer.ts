@@ -10,6 +10,8 @@ export const initialState = {
 	updateVideosList: (videos: []) => {},
 	selectedVideo: null,
 	updateSelectedVideo: (id: number) => {},
+	filter: "",
+	updateFilter: (filter: string) => {},
 	loading: true,
 	updateLoading: (status: boolean) => {},
 };
@@ -36,6 +38,13 @@ export const AppReducer = (state: IReducerState, action: IReducerAction) => {
 			return {
 				...state,
 				appTheme: payload.appTheme,
+			};
+			break;
+
+		case "UPDATE_FILTER":
+			return {
+				...state,
+				filter: payload.filter,
 			};
 			break;
 

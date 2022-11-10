@@ -4,6 +4,7 @@ export interface IReducerState {
 	videosList: {}[];
 	selectedVideo: {} | null;
 	loading: boolean;
+	filter: string;
 }
 
 export interface IReducerAction {
