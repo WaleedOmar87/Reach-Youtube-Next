@@ -1,24 +1,50 @@
 {
-  "name": "reach-next",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "13.0.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "@types/node": "18.11.9",
-    "@types/react": "18.0.25",
-    "@types/react-dom": "18.0.8",
-    "eslint": "8.27.0",
-    "eslint-config-next": "13.0.2",
-    "typescript": "4.8.4"
-  }
+	"name": "reach-next",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"test": "jest --watch"
+	},
+	"dependencies": {
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^13.5.0",
+		"@types/jest": "^27.5.2",
+		"@types/styled-components": "^5.1.26",
+		"dotenv": "^16.0.3",
+		"module-alias": "^2.2.2",
+		"next": "13.0.2",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"styled-components": "^5.3.6"
+	},
+	"devDependencies": {
+		"@testing-library/jest-dom": "5.16.4",
+		"@testing-library/react": "13.2.0",
+		"@testing-library/user-event": "14.2.0",
+		"@types/node": "18.11.9",
+		"@types/react": "18.0.25",
+		"@types/react-dom": "18.0.8",
+		"eslint": "8.27.0",
+		"eslint-config-next": "13.0.2",
+		"jest": "28.1.0",
+		"jest-environment-jsdom": "^29.0.3",
+		"mutationobserver-shim": "^0.3.7",
+		"typescript": "4.8.4"
+	},
+	"_moduleAliases": {
+		"@/components": "dist/components",
+		"@/utils": "dist/utils",
+		"@/config": "dist/config",
+		"@/styles": "styles",
+		"@/store": "store",
+		"@/hooks": "hooks"
+	},
+	"resolutions": {
+		"styled-components": "^5"
+	}
 }
