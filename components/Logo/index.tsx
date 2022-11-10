@@ -17,6 +17,7 @@ const Logo:FC = (): JSX.Element => {
 				/>
 				<path fill="#FFF" d="M20 31L20 17 32 24z" />
 			</svg>
+			<span className="logo-text">Youtube Search</span>
 		</div>
 	);
 };

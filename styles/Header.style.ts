@@ -15,7 +15,12 @@ export const HeaderStyle = styled.section`
 			display: flex;
 			width: 60px;
 			height: 60px;
+			align-items: center;
+			justify-content: flex-start;
+			font-size: 1rem;
+			gap: 1rem;
 			svg {
+				min-width: 60px;
 				width: 60px;
 				height: 60px;
 			}
@@ -50,6 +55,53 @@ export const HeaderStyle = styled.section`
 						width: 20px;
 						height: 20px;
 						fill: #000;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 640px) {
+		.page-header {
+			background-color: red;
+			flex-wrap: wrap;
+			.logo {
+				color: #fff;
+				span.logo-text {
+					display: none;
+				}
+			}
+			.search-bar-container {
+				flex-wrap: wrap;
+				width: 80%;
+				.search-form {
+					input[type="text"] {
+						background-color: transparent;
+						border-color: transparent;
+						color: #fff;
+						border-radius: 0.2rem;
+						::placeholder {
+							color: #fff;
+						}
+					}
+					input[type="text"]:focus,
+					input[type="text"]:focus-visible,
+					input[type="text"]:active {
+						background-color: #fff;
+						color: #000;
+						border-color: transparent;
+						outline: none;
+						::placeholder {
+							color: #020202;
+						}
+					}
+					button.submit {
+						padding: 0px;
+						border: none;
+						background: transparent;
+						svg {
+							fill: #fff;
+						}
 					}
 				}
 			}

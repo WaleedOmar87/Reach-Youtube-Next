@@ -13,8 +13,8 @@ export const ContainerStyle = styled.section`
 			margin: 0 auto;
 			padding: 0 15px;
 			@media screen and (max-width: 640px) {
-				min-width: 450px;
-				max-width: 450px;
+				min-width: 100vw;
+				max-width: 100vw;
 			}
 			.error-container {
 				display: flex;
@@ -22,6 +22,7 @@ export const ContainerStyle = styled.section`
 				color: #fff;
 				padding: 1em;
 				position: fixed;
+				z-index: 999;
 				bottom: 0;
 				left: 0;
 				width: 100vw;

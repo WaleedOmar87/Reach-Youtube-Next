@@ -18,6 +18,24 @@ export const VideosListStyle = styled.div`
 					max-width: 100%;
 				}
 			}
+			.meta {
+				display: flex;
+				flex-direction: column;
+				.channel-title {
+					border-bottom: 1px solid #ccc;
+					padding-bottom: 0.5rem;
+					margin-bottom: 0.5rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 640px) {
+		font-size: 0.8rem;
+		max-width: 100vw;
+		overflow: hidden;
+		.single-video {
+			width: 50%;
 		}
 	}
 `;
