@@ -20,13 +20,14 @@ export default function handler(
 		part: "snippet",
 	} as any);
 
-	if (["lastDay", "lastWeek", "lastMonth"].includes(filter as string)) {
+	if (filter == "lastWeek" || filter == "lastMonth" || filter == "lastDay") {
 		let filteredDate = filterDate(filter);
 		params.append("publishedAfter", filteredDate);
 	}
 
 	/* API Url */
 	const url = `https://www.googleapis.com/youtube/v3/search?${params}`;
+	console.log(filter);
 
 	/*
 		Fetch data from the api,

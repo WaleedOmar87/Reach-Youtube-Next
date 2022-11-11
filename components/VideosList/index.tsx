@@ -31,7 +31,7 @@ export const VideosList: FC = (): JSX.Element => {
 			q: searchTerm,
 			filter: filter,
 		});
-		const api = `${config.api}/?${params.toString()}}`;
+		const api = `${config.api}/?${params.toString()}`;
 
 		// Fetch data from local api
 		fetch(api, {
@@ -59,7 +59,7 @@ export const VideosList: FC = (): JSX.Element => {
 					local && updateLocalStatus(local);
 				}
 			});
-	}, [searchTerm]);
+	}, [searchTerm, filter]);
 
 	return (
 		<ContainerStyle>
