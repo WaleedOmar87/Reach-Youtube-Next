@@ -11,38 +11,40 @@ export interface IHint {
 }
 
 export interface IVideo {
-	kind: string;
-	etag: string;
-	id: {
+	video: {
 		kind: string;
-		videoId?: string;
-		playlistId?: string;
-	};
-	snippet: {
-		publishedAt: string;
-		channelId: string;
-		title: string;
-		description: string;
-		thumbnails: {
-			default: {
-				url: string;
-				width: number;
-				height: number;
-			};
-			medium: {
-				url: string;
-				width: number;
-				height: number;
-			};
-			high: {
-				url: string;
-				width: number;
-				height: number;
-			};
+		etag: string;
+		id: {
+			kind: string;
+			videoId?: string;
+			playlistId?: string;
 		};
-		channelTitle: string;
-		liveBroadcastContent?: any;
-		publishTime: string;
+		snippet: {
+			publishedAt: string;
+			channelId: string;
+			title: string;
+			description: string;
+			thumbnails: {
+				default: {
+					url: string;
+					width: number;
+					height: number;
+				};
+				medium: {
+					url: string;
+					width: number;
+					height: number;
+				};
+				high: {
+					url: string;
+					width: number;
+					height: number;
+				};
+			};
+			channelTitle: string;
+			liveBroadcastContent?: any;
+			publishTime: string;
+		};
 	};
 }
 
