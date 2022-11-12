@@ -1,19 +1,26 @@
-import nextJest from "next/jest"
-
+const nextJest = require("next/jest");
 const createJestConfig = nextJest({
-	// Provide the path to your Next.js app to load next.config.js and .env files in your test environment
 	dir: "./",
 });
+const { pathsToModuleNameMapper } = require("ts-jest");
+const baseUrl = ".";
+const paths = {
+	"@/utils/*": ["utils/*"],
+	"@/components/*": ["components/*"],
+	"@/types/*": ["types/*"],
+	"@/config/*": ["config/*"],
+	"@/styles/*": ["styles/*"],
+	"@/store/*": ["store/*"],
+	"@/hooks/*": ["hooks/*"],
+};
 
 // Add any custom config to be passed to Jest
 const customJestConfig = {
+	roots: ["<rootDir>"],
+	modulePaths: [baseUrl],
+	moduleNameMapper: pathsToModuleNameMapper(paths),
+	moduleDirectories: ["node_modules", "<rootDir>/"],
 	setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-	moduleNameMapper: {
-		// Handle module aliases (this will be automatically configured for you soon)
-		"^@/components/(.*)$": "<rootDir>/components/$1",
-
-		"^@/pages/(.*)$": "<rootDir>/pages/$1",
-	},
 	testEnvironment: "jest-environment-jsdom",
 };
 

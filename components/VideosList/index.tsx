@@ -75,13 +75,24 @@ export const VideosList: FC = (): JSX.Element => {
 						</Hint>
 						<Error code={error.code} message={error.message} />
 						<VideosListStyle>
-							{!loading ? (
-								videosList.map((video: IVideo) => {
-									return <VideoItem video={video} />;
-								})
-							) : (
-								<Loading />
-							)}
+							<div data-testid="videos-list-container">
+								{!loading ? (
+									videosList.map((video: IVideo) => {
+										return (
+											<VideoItem
+												key={
+													video.id.videoId
+														? video.id.videoId
+														: video.id.playlistId
+												}
+												video={video}
+											/>
+										);
+									})
+								) : (
+									<Loading />
+								)}
+							</div>
 						</VideosListStyle>
 					</div>
 				</header>
