@@ -19,6 +19,15 @@
 -   If port 3000 is not available, You can add another port in package.json under `scripts`, for example update `next dev` to `next dev -p 8080`.
 -   run `npm run build` to build the app
 
+## Testing
+- Run `npm test` to run tests.
+- Tests cover Videos list component, search component and filter menu component.
+- Tests use mock data stored in `__mocks__/data.json`.
+- Filter menu test are using mock data as well, to test the live API call you need to:
+-- Remove `videosList` value from `initialState` in the test, and set it the value to an empty array.
+-- Remove `ENABLE_FALLBACK` from your .env file, and make sure you're using a working API key.
+-- Remove `mockFetch` from your test.
+
 ## Local API
 
 -   API configurations are located in `config/index.ts`, you can edit `api` and add you local api if you're using a different port other than `3000`

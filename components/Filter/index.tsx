@@ -22,6 +22,7 @@ export const Filter: FC = (): JSX.Element => {
 							<h4>Filter</h4>
 							<select
 								id="filter-menu"
+								data-testid="filter-menu"
 								className="filter-menu"
 								onChange={(event) =>
 									updateFilter(event.target.value)
@@ -30,8 +31,8 @@ export const Filter: FC = (): JSX.Element => {
 								{filterOptions.map((option) => {
 									return (
 										<option
+											key={option.id}
 											value={option.id}
-											selected={option.id === filter}
 											id={option.id}
 										>
 											{option.title}

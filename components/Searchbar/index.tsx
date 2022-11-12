@@ -8,13 +8,18 @@ export const SearchBar: FC = (): JSX.Element => {
 		event.preventDefault();
 
 		/* Update Search Term */
-		if (event.target[0].name === "search") {
-			updateSearchTerm(event.target[0].value);
+		const { elements } = event.target;
+		if (elements.length && elements[0].name === "search") {
+			updateSearchTerm(elements[0].value);
 		}
 	};
 	return (
 		<div className="search-bar-container">
-			<form data-testid="search-form" className="search-form" onSubmit={handleSubmit}>
+			<form
+				data-testid="search-form"
+				className="search-form"
+				onSubmit={handleSubmit}
+			>
 				<input
 					type="text"
 					name="search"
@@ -22,11 +27,7 @@ export const SearchBar: FC = (): JSX.Element => {
 					placeholder="type and hit enter"
 					data-testid="search-input"
 				/>
-				<button
-					type="submit"
-					className="submit"
-					name="submit"
-				>
+				<button type="submit" className="submit" name="submit">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 512 512"

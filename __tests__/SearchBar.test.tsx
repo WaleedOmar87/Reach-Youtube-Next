@@ -28,12 +28,14 @@ describe("Test Searching For Videos", () => {
 		// Enter search term and submit search form
 		const searchForm = await screen.findByTestId("search-form");
 		const searchInput = await screen.findByTestId("search-input");
-		fireEvent.change(searchInput, {
-			target: {
-				value: "React",
-			},
+		await act(async () => {
+			fireEvent.change(searchInput, {
+				target: {
+					value: "React",
+				},
+			});
+			fireEvent.submit(searchForm);
 		});
-		fireEvent.submit(searchForm);
 
 		// Get list of videos
 		const videosContainer = await screen.findByTestId(
