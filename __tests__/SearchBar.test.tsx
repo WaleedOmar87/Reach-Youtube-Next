@@ -45,7 +45,6 @@ describe("Test Searching For Videos", () => {
 
 		// Expect list of videos to change
 		expect(videosList.length).toBeGreaterThan(0);
-		expect(videosList[0]).toBeTruthy();
 		expect(getFirstVideoTitle && getFirstVideoTitle.innerHTML).toContain(
 			"React"
 		);

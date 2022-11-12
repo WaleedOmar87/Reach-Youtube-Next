@@ -1,6 +1,3 @@
-import { AppProps } from "next/app";
-import React from "react";
-
 export interface IError {
 	message: string;
 	code: number;
