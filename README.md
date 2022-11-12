@@ -14,7 +14,8 @@
 
 -   Clone or download this repo to your local server
 -   Run `npm install` command to install dependencies
--   Run `npm run dev` to start development server on port 3000
+-   Run `npm dev` to start development server on port 3000
+-   Run `npm test` to run tests
 -   If port 3000 is not available, You can add another port in package.json under `scripts`, for example update `next dev` to `next dev -p 8080`.
 -   run `npm run build` to build the app
 
@@ -28,6 +29,7 @@
 -   `q` search query passed to the api.
 -   `filter` date filter parameter using to fetch videos from last day, last week or last month
 -   Example API Call to fetch videos from last day, week or month.
+
     > GET http://localhost:3000/api/videos?q=reactjs&filter=lastWeek
 
     > GET http://localhost:3000/api/videos?q=reactjs&filter=lastWeek
